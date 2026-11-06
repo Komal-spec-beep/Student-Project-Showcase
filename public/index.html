@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Project Showcase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Student Project Showcase Portal</h1>
+    <p>Explore projects created by students.</p>
+    <h2>Submit Your Project</h2>
+
+<form id="projectForm">
+    <label for="projectTitle">Project Title:</label>
+    <input type="text" id="projectTitle" name="projectTitle">
+
+    <br><br>
+
+    <label for="studentName">Student Name:</label>
+    <input type="text" id="studentName" name="studentName">
+
+    <br><br>
+
+    <label for="projectDescription">Project Description:</label>
+    <textarea id="projectDescription" name="projectDescription"></textarea>
+
+    <br><br>
+
+    <label for="githubLink">GitHub Link:</label>
+    <input type="url" id="githubLink" name="githubLink">
+
+    <br><br>
+
+    <label for="livePreview">Live Preview URL:</label>
+    <input type="url" id="livePreview" name="livePreview">
+
+    <br><br>
+
+    <label for="projectTags">Project Tags:</label>
+    <input type="text" id="projectTags" name="projectTags" placeholder="e.g. Java, Web Development">
+
+    <br><br>
+
+    <button type="submit">Submit Project</button>
+</form>
+
+<h2>Submitted Projects</h2>
+
+<!-- Search projects -->
+<input
+    type="text"
+    id="searchInput"
+    placeholder="Search projects..."
+>
+
+<!-- Project carousel -->
+<div class="carousel-wrapper">
+    <button id="prevProject" class="carousel-arrow" aria-label="Previous project">
+        &#10094;
+    </button>
+
+    <div id="projectsContainer">
+        <p>Loading projects...</p>
+    </div>
+
+    <button id="nextProject" class="carousel-arrow" aria-label="Next project">
+        &#10095;
+    </button>
+</div>
+
+<!-- Carousel indicators -->
+<div id="paginationContainer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
