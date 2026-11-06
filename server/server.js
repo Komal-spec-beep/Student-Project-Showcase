@@ -1,12 +1,13 @@
 const express = require("express");
 const db = require("./database");
+const path = require("path");
 
 const app = express();
 app.use(express.json({ limit: "100kb" }));
-app.use(express.static("../public"));
+app.use(express.static(path.join(__dirname, "../public")));
 
 app.get("/", (req, res) => {
-    res.sendFile("index.html", {root: "../public"});
+    res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 
@@ -132,6 +133,8 @@ app.get("/api/projects", (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log("Server running at http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
 });

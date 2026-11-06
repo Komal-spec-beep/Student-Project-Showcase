@@ -1,6 +1,9 @@
 const sqlite3 = require("sqlite3").verbose();
+const path = require("path");
 
-const db = new sqlite3.Database("./projects.db", (error) => {
+const db = new sqlite3.Database(
+    path.join(__dirname, "projects.db"),
+    (error) => {
     if (error) {
         console.error("Database connection failed:", error.message);
     } else {
